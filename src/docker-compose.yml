@@ -1,0 +1,19 @@
+version: '3.7'
+
+networks: 
+  bridge:
+    driver: bridge
+       
+services:
+
+  mssql:
+  
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      
+    networks:
+      - bridge
+      
+    ports:
+      - "1433:1433"
